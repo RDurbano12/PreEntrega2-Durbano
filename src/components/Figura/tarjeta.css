@@ -1,0 +1,12 @@
+img{
+    width: 15em;
+}
+.fcontenido{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 2px;
+    color:rgb(99, 91, 91);
+}
+.ltarjeta{
+    text-decoration: none;
+}
