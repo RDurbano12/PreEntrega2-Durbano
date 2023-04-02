@@ -1,12 +1,12 @@
-import { Button } from '@mui/material';
-import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Button } from "@mui/material";
+import { Link, useParams } from "react-router-dom"
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import ItemCount from '../Contador/terapiasCount';
-import { CartContext } from '../../context/context';
+import { CartContext } from "../../context/context";
+import { useContext } from "react";
+import ItemCount from "../Contador/terapiasCount";
 
 
-const TerapiaManualesItem = ({ terapias }) => {
+const RehabilitacionItem = ({ terapias }) => {
     const { id } = useParams();
     const terapia = terapias.find((terapias) => terapias.id == id)
     const { addItem } = useContext(CartContext)
@@ -16,9 +16,10 @@ const TerapiaManualesItem = ({ terapias }) => {
         
     }
 
+
+
     return (
         <div>
-
             <div>
                 <Link to="/terapias" className="colors">
                     <Button color="inherit" variant="text" startIcon={<MedicalInformationIcon />}>
@@ -26,8 +27,10 @@ const TerapiaManualesItem = ({ terapias }) => {
                     </Button>
                 </Link>
             </div>
-            <div >
-            <h3>{terapia.producto}</h3>
+
+
+            <div className="sitem">
+                <h3>{terapia.producto}</h3>
                 <img src={terapia.imagen} alt='' />
                 <p>{terapia.categoría}</p>
                 <p>{terapia.descripcion}</p>
@@ -39,4 +42,4 @@ const TerapiaManualesItem = ({ terapias }) => {
     )
 }
 
-export default TerapiaManualesItem
+export default RehabilitacionItem
